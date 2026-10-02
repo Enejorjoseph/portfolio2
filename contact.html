@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f4f3ed">
+<title>Contact</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper: '#0b0b0b',
+          ink: '#f5f5f5',
+          muted: '#a3a3a3',
+          line: 'rgba(255,255,255,0.08)'
+        },
+        fontFamily: {
+          sans: ['DM Sans', 'sans-serif'],
+          mono: ['DM Mono', 'monospace'],
+          manrope: ['Manrope', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="comets.css">
+<link rel="stylesheet" href="glow.css">
+<script src="comets.js" defer></script>
+<script src="glow.js" defer></script>
+</head>
+<body class="bg-paper text-ink font-sans min-h-screen flex flex-col antialiased relative overflow-x-hidden">
+  <div id="comets" class="comet-layer"></div>
+  <header class="w-full border-b border-line relative z-10">
+    <div class="mx-auto px-4 w-full max-w-sm sm:max-w-2xl md:max-w-6xl lg:max-w-7xl flex flex-col gap-3 md:flex-row md:items-center md:justify-between py-4 md:min-h-[96px] md:py-6">
+      <a href="index.html" class="font-mono font-medium text-xs tracking-widest uppercase hover:text-muted transition-colors">PORTFOLIO / SELECTED WORK</a>
+      <nav class="flex flex-wrap items-center gap-2 md:gap-5">
+        <a href="about-me.html" class="font-mono text-[11px] tracking-widest uppercase text-muted hover:text-ink transition-colors">About me</a>
+        <a href="skills.html" class="font-mono text-[11px] tracking-widest uppercase text-muted hover:text-ink transition-colors">Skills</a>
+        <a href="services.html" class="font-mono text-[11px] tracking-widest uppercase text-muted hover:text-ink transition-colors">Services</a>
+        <a href="contact.html" class="font-mono text-[11px] tracking-widest uppercase text-ink">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-1 flex items-center justify-center">
+    <div class="mx-auto px-4 w-full max-w-sm sm:max-w-2xl md:max-w-4xl py-10 md:py-16">
+      <div class="mb-6">
+        <div class="font-mono font-medium text-[11px] tracking-[0.1em] uppercase text-muted">SAY HELLO</div>
+        <h1 class="font-manrope font-semibold tracking-tighter leading-[0.98] text-4xl mt-3 md:text-6xl">Let’s connect.</h1>
+      </div>
+      <div class="flex flex-col gap-3 mt-8 md:w-3/4 animate-[fadeUp_600ms_ease-out_both]">
+        <a class="flex items-center justify-between px-5 py-5 border border-white/10 rounded-full no-underline font-mono font-medium text-[10px] md:text-xs tracking-widest uppercase transition-all hover:bg-ink hover:text-paper hover:border-ink group" href="mailto:enejorjospeh@gmail.com">Email <span class="font-sans text-[11px] normal-case text-muted group-hover:text-paper group-hover:opacity-90">enejorjospeh@gmail.com ↗</span></a>
+        <a class="flex items-center justify-between px-5 py-5 border border-white/10 rounded-full no-underline font-mono font-medium text-[10px] md:text-xs tracking-widest uppercase transition-all hover:bg-ink hover:text-paper hover:border-ink group" href="https://wa.me/18159690896" target="_blank" rel="noreferrer">WhatsApp <span class="font-sans text-[11px] normal-case text-muted group-hover:text-paper group-hover:opacity-90">+1 815 969 0896 ↗</span></a>
+        <a class="flex items-center justify-between px-5 py-5 border border-white/10 rounded-full no-underline font-mono font-medium text-[10px] md:text-xs tracking-widest uppercase transition-all hover:bg-ink hover:text-paper hover:border-ink group" href="https://t.me/josephD112" target="_blank" rel="noreferrer">Telegram <span class="font-sans text-[11px] normal-case text-muted group-hover:text-paper group-hover:opacity-90">@josephD112 ↗</span></a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="mx-auto px-4 w-full max-w-sm sm:max-w-2xl md:max-w-6xl lg:max-w-7xl flex flex-wrap justify-between items-center gap-x-4 gap-y-2.5 py-5 border-t border-line font-mono font-medium text-[10px] tracking-widest text-muted">
+    <span>© 2026 · SELECTED WORK</span>
+    <span><a href="index.html" class="hover:text-ink">BACK TO HOME</a></span>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,76 @@
+.glow-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(58% 42% at 78% 10%, rgba(88, 128, 255, 0.1), transparent 70%),
+    radial-gradient(52% 38% at 16% 82%, rgba(150, 96, 255, 0.08), transparent 70%);
+}
+
+.glow-aura {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 760px;
+  height: 760px;
+  opacity: 0;
+  transition: opacity 600ms ease;
+  background: radial-gradient(closest-side circle, rgba(150, 190, 255, 0.22), rgba(120, 145, 255, 0.1) 42%, rgba(0, 0, 0, 0) 72%);
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+}
+
+.glow-layer.is-live .glow-aura {
+  opacity: 1;
+}
+
+.glow-bloom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 460px;
+  height: 460px;
+  opacity: 0;
+  transition: opacity 700ms ease;
+  background: radial-gradient(closest-side circle, rgba(190, 212, 255, 0.26), rgba(160, 130, 255, 0.12) 40%, rgba(0, 0, 0, 0) 70%);
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+}
+
+.glow-layer.is-hovering .glow-bloom {
+  opacity: 1;
+}
+
+.glow-ripple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 26px;
+  height: 26px;
+  margin: -13px 0 0 -13px;
+  border-radius: 50%;
+  border: 1px solid rgba(205, 222, 255, 0.55);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0) 70%);
+  box-shadow: 0 0 24px 8px rgba(150, 180, 255, 0.28);
+  mix-blend-mode: screen;
+  animation: glowRipple 950ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes glowRipple {
+  from {
+    transform: scale(0.2);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(10);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow-layer {
+    display: none;
+  }
+}

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f4f3ed">
+<title>Portfolio — Selected Work</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper: '#0b0b0b',
+          ink: '#f5f5f5',
+          muted: '#a3a3a3',
+          line: 'rgba(255,255,255,0.08)',
+          green: '#22c55e',
+          orange: '#fb923c',
+          blue: '#3b82f6'
+        },
+        fontFamily: {
+          sans: ['DM Sans', 'sans-serif'],
+          mono: ['DM Mono', 'monospace'],
+          manrope: ['Manrope', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="comets.css">
+<link rel="stylesheet" href="glow.css">
+<style>
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes cardPulse {
+    0%, 33.34%, 100% {
+      background-color: rgba(255, 255, 255, 0.035);
+      border-color: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px) saturate(120%);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    }
+    16.67% {
+      background-color: rgba(255, 255, 255, 0);
+      border-color: rgba(255, 255, 255, 0);
+      backdrop-filter: blur(0px) saturate(100%);
+      box-shadow: 0 0 70px 10px rgba(130, 170, 255, 0.14);
+    }
+  }
+  @keyframes cardContentPulse {
+    0%, 33.34%, 100% { opacity: 1; }
+    16.67% { opacity: 0.05; }
+  }
+  .pulse-card {
+    --pulse-delay: 1s;
+    background-color: rgba(255, 255, 255, 0.035);
+    backdrop-filter: blur(14px) saturate(120%);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    animation: fadeUp 600ms ease-out both, cardPulse 6s ease-in-out infinite var(--pulse-delay);
+  }
+  .pulse-card:nth-of-type(2) { --pulse-delay: 4s; }
+  .pulse-body { animation: cardContentPulse 6s ease-in-out infinite var(--pulse-delay); }
+  @media (prefers-reduced-motion: reduce) {
+    .pulse-card, .pulse-body { animation: none; }
+  }
+</style>
+<script src="comets.js" defer></script>
+<script src="glow.js" defer></script>
+</head>
+<body class="bg-paper text-ink font-sans antialiased relative overflow-x-hidden">
+  <div id="comets" class="comet-layer"></div>
+  <header class="w-full border-b border-line relative z-10">
+    <div class="mx-auto px-4 w-full max-w-sm sm:max-w-2xl md:max-w-6xl lg:max-w-7xl flex flex-col gap-3 md:flex-row md:items-center md:justify-between py-4 md:min-h-[96px] md:py-6">
+      <div class="font-mono font-medium text-xs tracking-widest uppercase">PORTFOLIO / SELECTED WORK</div>
+      <nav class="flex flex-wrap items-center gap-2 md:gap-5">
+        <a href="about-me.html" class="font-mono text-[11px] tracking-widest uppercase text-muted hover:text-ink transition-colors">About me</a>
+        <a href="skills.html" class="font-mono text-[11px] tracking-widest uppercase text-muted hover:text-ink transition-colors">Skills</a>
+        <a href="services.html" class="font-mono text-[11px] tracking-widest uppercase text-muted hover:text-ink transition-colors">Services</a>
+        <a href="contact.html" class="font-mono text-[11px] tracking-widest hover:text-ink text-muted">CONTACT ↘</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mx-auto px-4 w-full max-w-sm sm:max-w-2xl md:max-w-6xl lg:max-w-7xl">
+    <section class="py-16 md:py-32 animate-[fadeUp_600ms_ease-out_both]">
+      <div>
+        <div class="font-mono font-medium text-[11px] tracking-[0.1em] uppercase text-muted">A LITTLE ABOUT MY WORK</div>
+        <h1 class="font-manrope font-semibold tracking-tighter leading-[0.92] text-6xl mt-6 mb-7 md:text-8xl lg:text-[120px]">Building things<br>that make sense.</h1>
+        <p class="text-lg leading-relaxed text-muted max-w-2xl md:text-xl mb-12">Thoughtful digital tools designed to make everyday tasks feel simpler. Here are two projects I’ve been working on.</p>
+        <div class="flex flex-wrap gap-3 md:gap-4">
+          <a href="#projects" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-ink text-paper border border-ink font-mono font-medium text-[11px] tracking-widest uppercase transition-all hover:-translate-y-px">View Projects</a>
+          <a href="contact.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-transparent text-ink border border-white/10 font-mono font-medium text-[11px] tracking-widest uppercase transition-all hover:-translate-y-px hover:border-white/40">Get in Touch</a>
+        </div>
+      </div>
+      </section>
+
+    <div id="projects" class="flex items-center justify-between border-t border-line py-8 animate-[fadeIn_600ms_ease-out_both]">
+      <h2 class="font-mono font-medium text-xs tracking-wider uppercase m-0">Selected projects</h2>
+      <span class="font-mono text-xs text-muted">01 — 02</span>
+    </div>
+
+    <section class="grid grid-cols-1 gap-6 pb-20 md:grid-cols-2 md:gap-8 md:pb-32">
+      <article class="pulse-card border border-white/10 rounded-2xl overflow-hidden transition-transform duration-300 hover:-translate-y-1.5">
+        <div class="pulse-body relative h-[280px] flex items-center justify-center px-6 overflow-hidden md:h-[320px] bg-[radial-gradient(120%_120%_at_50%_10%,rgba(190,232,168,0.12),rgba(140,180,110,0.03)_65%,transparent)] border-b border-white/10">
+          <div class="absolute top-9 left-1/2 -translate-x-1/2 w-[138px] h-[138px] rounded-full bg-[radial-gradient(circle_at_50%_30%,rgba(226,246,214,0.32),rgba(155,191,101,0.14)_70%,transparent)] shadow-[inset_0_-14px_40px_rgba(155,191,101,0.18),0_20px_70px_rgba(143,174,96,0.18)]"></div>
+          <div class="relative z-10 w-5/6 max-w-[240px] border border-white/10 rounded-lg bg-white/[0.04] backdrop-blur-md shadow-[0_24px_60px_rgba(0,0,0,0.45)]">
+            <div class="h-8 flex items-center gap-1.5 px-2.5 border-b border-white/10">
+              <i class="w-1.5 h-1.5 rounded-full bg-white/25"></i>
+              <i class="w-1.5 h-1.5 rounded-full bg-white/25"></i>
+              <i class="w-1.5 h-1.5 rounded-full bg-white/25"></i>
+              <span class="ml-auto font-mono font-medium text-[8px] tracking-widest text-muted">CHEMISTRY TOOLS</span>
+            </div>
+            <div class="p-3.5 pb-4">
+              <div class="font-mono font-medium text-[8px] tracking-widest text-muted">CHEMISTRY TOOLS</div>
+              <div class="font-manrope font-semibold text-sm tracking-tight mt-1.5 mb-2.5">Chemistry Calculator</div>
+              <div class="border border-white/10 rounded-md h-8 flex items-center px-2.5 font-mono font-medium text-xs bg-white/[0.03]">H₂O</div>
+              <div class="mt-2.5 border border-white/10 rounded-md px-2.5 py-2 flex items-center justify-between bg-white/[0.03]">
+                <span class="font-mono font-medium text-[8px] tracking-widest text-muted">MOLAR MASS</span>
+                <b class="font-mono font-semibold text-[13px]">18.015</b>
+              </div>
+            </div>
+          </div>
+          <span class="absolute top-3.5 left-3.5 font-mono font-medium text-[10px] tracking-wider bg-black/70 backdrop-blur-md border border-white/10 rounded px-2 py-1.5">PROJECT 01</span>
+        </div>
+        <div class="pulse-body p-7 md:p-8">
+          <div class="flex items-center justify-between">
+            <span class="font-mono font-medium text-[10px] tracking-widest uppercase text-muted">SCIENCE · WEB APP</span>
+          </div>
+          <h3 class="font-manrope font-semibold text-2xl md:text-3xl leading-[1.08] tracking-tight mt-4 mb-3">Chemistry Calculator</h3>
+          <p class="text-base leading-relaxed text-muted mb-5">A browser-based tool for calculating molecular mass and exploring the protons, neutrons, and electrons in atoms and ions.</p>
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            <span class="font-mono font-medium text-[9px] tracking-wider px-2.5 py-1.5 border border-white/10 rounded-full bg-white/[0.04]">Molar mass</span>
+            <span class="font-mono font-medium text-[9px] tracking-wider px-2.5 py-1.5 border border-white/10 rounded-full bg-white/[0.04]">Atomic structure</span>
+            <span class="font-mono font-medium text-[9px] tracking-wider px-2.5 py-1.5 border border-white/10 rounded-full bg-white/[0.04]">Runs in browser</span>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-ink text-paper border border-ink font-mono font-medium text-[10px] tracking-widest uppercase transition-all hover:-translate-y-px" href="https://science-fs2s.vercel.app/" target="_blank" rel="noreferrer">Live Demo ↗</a>
+            <a class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-transparent text-ink border border-white/10 font-mono font-medium text-[10px] tracking-widest uppercase transition-all hover:-translate-y-px hover:border-white/40" href="#" aria-label="GitHub">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pulse-card border border-white/10 rounded-2xl overflow-hidden transition-transform duration-300 hover:-translate-y-1.5">
+        <div class="pulse-body relative h-[280px] flex items-center justify-center px-6 overflow-hidden md:h-[320px] bg-[radial-gradient(120%_120%_at_50%_0%,rgba(140,180,255,0.12),rgba(90,130,220,0.03)_65%,transparent)] border-b border-white/10">
+          <div class="relative z-10 w-[86%] max-w-[232px] border border-white/10 rounded-lg bg-white/[0.04] backdrop-blur-md shadow-[0_24px_60px_rgba(0,0,0,0.45)] p-3 pb-2.5">
+            <div class="flex items-center justify-between px-2 py-1.5 rounded-md bg-[linear-gradient(90deg,rgba(255,255,255,0.05),rgba(120,140,255,0.09))] border border-white/10 font-mono font-medium text-[8px] tracking-widest">
+              <span>EXPRESS TRACKER</span>
+              <span>IN TRANSIT</span>
+            </div>
+            <div class="grid grid-cols-3 gap-1.5 mt-2 mb-1.5">
+              <div class="border border-white/10 rounded-md px-1.5 py-1.5 text-center bg-white/[0.03]">
+                <div class="font-mono font-medium text-[7px] tracking-wider text-muted">ACTIVE SHIPMENTS</div>
+                <b class="block mt-0.5 font-mono font-semibold text-xs text-ink">08</b>
+              </div>
+              <div class="border border-white/10 rounded-md px-1.5 py-1.5 text-center bg-white/[0.03]">
+                <div class="font-mono font-medium text-[7px] tracking-wider text-muted">DELIVERED</div>
+                <b class="block mt-0.5 font-mono font-semibold text-xs text-ink">24</b>
+              </div>
+              <div class="border border-white/10 rounded-md px-1.5 py-1.5 text-center bg-white/[0.03]">
+                <div class="font-mono font-medium text-[7px] tracking-wider text-muted">ON TIME</div>
+                <b class="block mt-0.5 font-mono font-semibold text-xs text-ink">96%</b>
+              </div>
+            </div>
+            <div class="flex items-start gap-2 p-2 rounded-md border border-white/10 mt-1.5 bg-white/[0.03]">
+              <i class="w-1.5 h-1.5 rounded-full bg-green mt-0.5 shadow-[0_0_0_3px_rgba(34,197,94,0.16),0_0_12px_rgba(34,197,94,0.35)]"></i>
+              <span class="text-[9px] leading-tight text-muted"><b class="text-ink font-semibold">Shipment #EX-2048</b><br>Out for delivery · Today</span>
+            </div>
+            <div class="flex items-start gap-2 p-2 rounded-md border border-white/10 mt-1.5 bg-white/[0.03]">
+              <i class="w-1.5 h-1.5 rounded-full bg-orange mt-0.5 shadow-[0_0_0_3px_rgba(251,146,60,0.16),0_0_12px_rgba(251,146,60,0.35)]"></i>
+              <span class="text-[9px] leading-tight text-muted"><b class="text-ink font-semibold">Shipment #EX-2047</b><br>In transit · Sorting center</span>
+            </div>
+            <div class="flex items-start gap-2 p-2 rounded-md border border-white/10 mt-1.5 bg-white/[0.03]">
+              <i class="w-1.5 h-1.5 rounded-full bg-blue mt-0.5 shadow-[0_0_0_3px_rgba(59,130,246,0.16),0_0_12px_rgba(59,130,246,0.35)]"></i>
+              <span class="text-[9px] leading-tight text-muted"><b class="text-ink font-semibold">Shipment #EX-2046</b><br>Delivered · Yesterday</span>
+            </div>
+          </div>
+          <span class="absolute top-3.5 left-3.5 font-mono font-medium text-[10px] tracking-wider bg-black/70 backdrop-blur-md border border-white/10 rounded px-2 py-1.5">PROJECT 02</span>
+        </div>
+        <div class="pulse-body p-7 md:p-8">
+          <div class="flex items-center justify-between">
+            <span class="font-mono font-medium text-[10px] tracking-widest uppercase text-muted">LOGISTICS · DASHBOARD</span>
+          </div>
+          <h3 class="font-manrope font-semibold text-2xl md:text-3xl leading-[1.08] tracking-tight mt-4 mb-3">Express Tracker</h3>
+          <p class="text-base leading-relaxed text-muted mb-5">A delivery tracking dashboard that brings shipment status and progress into one place.</p>
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            <span class="font-mono font-medium text-[9px] tracking-wider px-2.5 py-1.5 border border-white/10 rounded-full bg-white/[0.04]">Shipment tracking</span>
+            <span class="font-mono font-medium text-[9px] tracking-wider px-2.5 py-1.5 border border-white/10 rounded-full bg-white/[0.04]">Dashboard</span>
+            <span class="font-mono font-medium text-[9px] tracking-wider px-2.5 py-1.5 border border-white/10 rounded-full bg-white/[0.04]">Express delivery</span>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-ink text-paper border border-ink font-mono font-medium text-[10px] tracking-widest uppercase transition-all hover:-translate-y-px" href="https://node-3o9c.onrender.com/dashboard" target="_blank" rel="noreferrer">Live Demo ↗</a>
+            <a class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-transparent text-ink border border-white/10 font-mono font-medium text-[10px] tracking-widest uppercase transition-all hover:-translate-y-px hover:border-white/40" href="#" aria-label="GitHub">GitHub</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <section class="mx-auto px-4 w-full max-w-sm sm:max-w-2xl md:max-w-6xl lg:max-w-7xl border-t border-line py-9 md:py-14 text-center">
+    <div class="font-mono font-medium text-[11px] tracking-[0.1em] uppercase text-muted mb-2">GET IN TOUCH</div>
+    <a href="contact.html" class="font-manrope font-semibold tracking-tighter leading-[0.98] text-3xl md:text-5xl lg:text-6xl hover:text-muted transition-colors inline-block">Let’s connect →</a>
+  </section>
+
+  <footer class="mx-auto px-4 w-full max-w-sm sm:max-w-2xl md:max-w-6xl lg:max-w-7xl flex flex-wrap justify-between items-center gap-x-4 gap-y-2.5 py-5 md:py-7 border-t border-line font-mono font-medium text-[10px] tracking-widest text-muted leading-relaxed md:leading-tight">
+    <span>© 2026 · SELECTED WORK</span>
+    <span>CHEMISTRY CALCULATOR · EXPRESS TRACKER</span>
+  </footer>
+</body>
+</html>
